@@ -37,7 +37,7 @@ knitr::include_graphics("../man/figures/custom-yaml-rendered.png")
 # )
 # 
 # froggeR::write_quarto(
-#   filename = "frogs",
+#   filename = "analysis",
 #   custom_yaml = TRUE
 # )
 

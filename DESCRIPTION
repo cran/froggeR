@@ -1,7 +1,7 @@
 Package: froggeR
 Type: Package
 Title: Enhance 'Quarto' Project Workflows and Standards
-Version: 0.3.0
+Version: 0.4.0
 Authors@R: 
     person(
         "Kyle",
@@ -24,10 +24,10 @@ Config/build/copy-resources: inst/gists/basic_quarto.qmd
         inst/gists/custom_quarto.qmd inst/gists/README.md
 Config/testthat/edition: 3
 VignetteBuilder: knitr
-URL: https://kylegrealis.github.io/froggeR/
+URL: https://azimuth-project.tech/froggeR/
 BugReports: https://github.com/kyleGrealis/froggeR/issues
 NeedsCompilation: no
-Packaged: 2025-01-13 18:06:23 UTC; kyle
+Packaged: 2025-03-16 17:11:16 UTC; kyle
 Author: Kyle Grealis [aut, cre] (<https://orcid.org/0000-0002-9223-8854>)
 Repository: CRAN
-Date/Publication: 2025-01-15 16:30:06 UTC
+Date/Publication: 2025-03-16 17:20:02 UTC
