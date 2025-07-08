@@ -343,16 +343,17 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
-<p>One of <code>froggeR</code>’s core strengths is its ability to
-maintain consistent settings and styling across multiple projects. This
-vignette demonstrates how to set up and customize your Quarto documents
-using <code>froggeR</code>’s SCSS document.</p>
+<p>One of froggeR’s core strengths is its ability to maintain consistent
+settings and styling across multiple projects. This vignette
+demonstrates how to set up and customize your Quarto documents using
+froggeR’s SCSS document.</p>
 <hr />
 </div>
 <div id="using-custom-variables-in-quarto-documents" class="section level2">
 <h2>Using Custom Variables in Quarto Documents</h2>
 <p>froggeR allows you to use variables from your
-<code>_variables.yml</code> file directly in your Quarto documents:</p>
+<code>_variables.yml</code> file directly in your
+<code>_quarto.yml</code> or Quarto documents:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;My Document&quot;</span></span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{&lt; var author &gt;}}&quot;</span></span>
@@ -406,7 +407,10 @@ act like a menu of styling options:</p>
 <div id="working-with-multiple-scss-files" class="section level3">
 <h3>Working with Multiple SCSS Files</h3>
 <p>To multiple or a organization-specific SCSS file in your Quarto
-document, update the YAML header:</p>
+document, update the YAML header. Be advised that modifying the
+<em>document</em>-level YAML (i.e., the YAML for the .qmd file) will
+override any options set in <code>_quarto.yml</code> &amp;
+<code>_variables.yml</code>.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;My Document&quot;</span></span>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
@@ -565,7 +569,7 @@ variables:</p>
 </div>
 <div id="summary" class="section level2">
 <h2>Summary</h2>
-<p><code>froggeR</code> streamlines document customization:</p>
+<p>froggeR streamlines document customization:</p>
 <ol style="list-style-type: decimal">
 <li>Set up once with <code>settings()</code></li>
 <li>Style with <code>write_scss()</code></li>

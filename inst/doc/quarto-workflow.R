@@ -4,24 +4,6 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 
-## ----eval=FALSE---------------------------------------------------------------
-# froggeR::quarto_project(name = "frogs")
-
-## ----eval=FALSE---------------------------------------------------------------
-# froggeR::write_quarto(
-#   filename = "frog_analysis",
-#   custom_yaml = TRUE  # Use settings from _variables.yml
-# )
-
-## ----eval=FALSE---------------------------------------------------------------
-# froggeR::write_quarto(
-#   filename = "frog_standalone",
-#   custom_yaml = FALSE  # Basic Quarto template
-# )
-
-## ----echo=FALSE, fig.align='center', fig.cap='Comparison of document types', out.width='85%'----
-knitr::include_graphics("../man/figures/yaml-comparison.png")
-
 ## ----echo=FALSE, fig.align='center', fig.cap='Example output of custom_yaml document', out.width='85%'----
 knitr::include_graphics("../man/figures/custom-yaml-rendered.png")
 
@@ -32,17 +14,15 @@ knitr::include_graphics("../man/figures/custom-yaml-rendered.png")
 ## ----eval=FALSE---------------------------------------------------------------
 # # Add analysis documents
 # froggeR::write_quarto(
-#   filename = "data_prep",
-#   custom_yaml = TRUE
+#   filename = "data_prep"
 # )
 # 
 # froggeR::write_quarto(
-#   filename = "analysis",
-#   custom_yaml = TRUE
+#   filename = "analysis"
 # )
 
 ## ----eval=FALSE---------------------------------------------------------------
-# froggeR::quarto_project(name = "advanced_frogs")
+# froggeR::quarto_project(name = "my_project")
 
 ## ----eval=FALSE---------------------------------------------------------------
 # # Data preparation
