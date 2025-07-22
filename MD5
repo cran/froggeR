@@ -1,7 +1,7 @@
-e727a1912a5a529ad544d5cf00a14411 *DESCRIPTION
+aeb69dc9b5178629cb1719b8f70cca17 *DESCRIPTION
 808c2ea2f99b19787cfe59a10cf1d362 *LICENSE
 964abea966b9031bfe3bc26336018254 *NAMESPACE
-b78a67da57190fc00cb57d64e470a35a *NEWS.md
+739b0447b44bd39aa6fc7b078ee84a28 *NEWS.md
 00c40ddd1bc73d4533afa9c4ff75c62c *R/froggeR-package.R
 d8a2e60813fe3407aac922d710946385 *R/quarto_project.R
 fc52f8ae15bc1505a14e2fbe4869ea8e *R/save_brand.R
@@ -17,12 +17,13 @@ b691b0435bef4fc5f33ba50a95bed56f *R/write_quarto.R
 95279751c02d9c128fa6dd64c538d56f *R/write_variables.R
 b500a0fced3b663bfddc5a92347fd6d1 *README.md
 fa68463b0c11128e923860c900549193 *build/vignette.rds
+21a1210ce810609815c448ccfd1860e6 *inst/WORDLIST
 ce7eaa7aa57cb91a8fe3ff46ffdeb786 *inst/doc/customizing-quarto.R
 36a920c2d8cba1c830993d11fe59097b *inst/doc/customizing-quarto.Rmd
 8e0a4887e95db37716de581cb33ff6c4 *inst/doc/customizing-quarto.html
 927cfb68e2bcf048de4d0a533e25ac80 *inst/doc/hopping-into-quarto.R
-c8d7b2e586de78d0cd4dae1685cf8cf4 *inst/doc/hopping-into-quarto.Rmd
-8c2b83da12c99fe0d51103b7bf56fa64 *inst/doc/hopping-into-quarto.html
+56cf0fcf6f9b47469fb081c21edb1f7d *inst/doc/hopping-into-quarto.Rmd
+c32bed45d0c18de928da476469973b8e *inst/doc/hopping-into-quarto.html
 35ebab9d64cffd1102c0beb671055950 *inst/doc/quarto-workflow.R
 cb5b1a69470d41218af99bdd097ab28d *inst/doc/quarto-workflow.Rmd
 2114ef4b1e8b2ef68d8d58453b03446c *inst/doc/quarto-workflow.html
@@ -78,5 +79,5 @@ ef955565d16adfd9d8ee49c9eba57397 *tests/testthat/test-write_notes.R
 673e1b7ba8d95bcb36949cdb27c1faaa *tests/testthat/test-write_scss.R
 981ff8162f03dd1aabf7d0ef62189144 *tests/testthat/test-write_variables.R
 36a920c2d8cba1c830993d11fe59097b *vignettes/customizing-quarto.Rmd
-c8d7b2e586de78d0cd4dae1685cf8cf4 *vignettes/hopping-into-quarto.Rmd
+56cf0fcf6f9b47469fb081c21edb1f7d *vignettes/hopping-into-quarto.Rmd
 cb5b1a69470d41218af99bdd097ab28d *vignettes/quarto-workflow.Rmd
