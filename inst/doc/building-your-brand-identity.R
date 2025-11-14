@@ -4,7 +4,3 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 
-## ----eval=FALSE---------------------------------------------------------------
-# froggeR::write_readme()
-# froggeR::write_notes()
-

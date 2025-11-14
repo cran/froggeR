@@ -1,7 +1,7 @@
 Package: froggeR
 Type: Package
 Title: Enhance 'Quarto' Project Workflows and Standards
-Version: 0.5.2
+Version: 0.6.0
 Authors@R: 
     person(
         "Kyle",
@@ -14,11 +14,11 @@ Maintainer: Kyle Grealis <kyleGrealis@icloud.com>
 Description: Streamlines 'Quarto' workflows by providing tools for consistent project setup and documentation. Enables portability through reusable metadata, automated project structure creation, and standardized templates. Features include enhanced project initialization, pre-formatted 'Quarto' documents, inclusion of 'Quarto' brand functionality, comprehensive data protection settings, custom styling, and structured documentation generation. Designed to improve efficiency and collaboration in R data science projects by reducing repetitive setup tasks while maintaining consistent formatting across multiple documents. 
 License: MIT + file LICENSE
 Encoding: UTF-8
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 Depends: R (>= 3.5.0)
 Imports: cli (>= 3.0.0), fs, glue (>= 1.6.0), here (>= 1.0.1), quarto
-        (>= 1.3.0), rappdirs, readr (>= 2.0.0), rstudioapi, stringr (>=
-        1.5.0), usethis (>= 2.2.0), yaml
+        (>= 1.3.0), rappdirs, readr (>= 2.0.0), rlang, rstudioapi,
+        stringr (>= 1.5.0), usethis (>= 2.2.0), yaml
 Suggests: knitr, mockery, rmarkdown, testthat (>= 3.0.0), withr
 Config/build/copy-resources: inst/gists/basic_quarto.qmd
         inst/gists/custom_quarto.qmd inst/gists/README.md
@@ -27,8 +27,8 @@ VignetteBuilder: knitr
 URL: https://www.kyleGrealis.com/froggeR/
 BugReports: https://github.com/kyleGrealis/froggeR/issues
 NeedsCompilation: no
-Packaged: 2025-08-21 18:59:08 UTC; kyle
+Packaged: 2025-11-14 14:59:18 UTC; kyle
 Author: Kyle Grealis [aut, cre] (ORCID:
     <https://orcid.org/0000-0002-9223-8854>)
 Repository: CRAN
-Date/Publication: 2025-08-21 19:10:17 UTC
+Date/Publication: 2025-11-14 20:00:09 UTC
