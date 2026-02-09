@@ -4,37 +4,44 @@
 \alias{write_scss}
 \title{Create a Quarto SCSS File}
 \usage{
-write_scss(path = here::here())
+write_scss(filename = "custom", path = here::here())
 }
 \arguments{
-\item{path}{Character. Path to the project directory. Default is current project
-root via \code{\link[here]{here}}.}
+\item{filename}{Character. The name of the file without the \code{.scss}
+extension. A \code{www/} prefix and \code{.scss} extension are stripped
+automatically if provided, so \code{"custom2"} and
+\code{"www/custom2.scss"} are equivalent. Only letters, numbers, hyphens,
+and underscores are allowed. Default is \code{"custom"}.}
+
+\item{path}{Character. Path to the project directory. Default is current
+working directory via \code{\link[here]{here}}.}
 }
 \value{
-Invisibly returns the path to the created file.
+Invisibly returns the path to the file.
 }
 \description{
-This function creates a \code{.scss} file for custom Quarto styling and opens it
-for editing.
+Creates or opens an SCSS file in the \code{www/} directory. If the file
+already exists, it is opened directly. Otherwise, the template is
+downloaded from the
+\href{https://github.com/kyleGrealis/frogger-templates}{frogger-templates}
+repository.
 }
 \details{
-The function creates a \code{custom.scss} file with styling variables, mixins,
-and rules for customizing Quarto document appearance.
+The file is written to \code{www/<filename>.scss}. The \code{www/}
+directory is created automatically if it does not exist.
 }
 \examples{
-# Create a temporary directory for testing
-tmp_dir <- tempdir()
+\dontrun{
+# Create the default custom.scss
+write_scss()
 
-# Write the SCSS file
-write_scss(path = tmp_dir)
-
-# Confirm the file was created
-file.exists(file.path(tmp_dir, "custom.scss"))
-
-# Clean up
-unlink(file.path(tmp_dir, "custom.scss"))
+# Create a second SCSS file
+write_scss("custom2")
+# These are equivalent
+write_scss("www/custom2.scss")
+}
 
 }
 \seealso{
-\code{\link{quarto_project}}, \code{\link{write_quarto}}
+\code{\link{init}}, \code{\link{write_quarto}}
 }

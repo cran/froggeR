@@ -1,74 +1,63 @@
 #' Create a Quarto SCSS File
 #'
-#' This function creates a \code{.scss} file for custom Quarto styling and opens it
-#' for editing.
+#' Creates or opens an SCSS file in the \code{www/} directory. If the file
+#' already exists, it is opened directly. Otherwise, the template is
+#' downloaded from the
+#' \href{https://github.com/kyleGrealis/frogger-templates}{frogger-templates}
+#' repository.
 #'
-#' @param path Character. Path to the project directory. Default is current project
-#'   root via \code{\link[here]{here}}.
+#' @param filename Character. The name of the file without the \code{.scss}
+#'   extension. A \code{www/} prefix and \code{.scss} extension are stripped
+#'   automatically if provided, so \code{"custom2"} and
+#'   \code{"www/custom2.scss"} are equivalent. Only letters, numbers, hyphens,
+#'   and underscores are allowed. Default is \code{"custom"}.
+#' @param path Character. Path to the project directory. Default is current
+#'   working directory via \code{\link[here]{here}}.
 #'
-#' @return Invisibly returns the path to the created file.
+#' @return Invisibly returns the path to the file.
 #'
 #' @details
-#' The function creates a \code{custom.scss} file with styling variables, mixins,
-#' and rules for customizing Quarto document appearance.
+#' The file is written to \code{www/<filename>.scss}. The \code{www/}
+#' directory is created automatically if it does not exist.
 #'
 #' @examples
-#' # Create a temporary directory for testing
-#' tmp_dir <- tempdir()
+#' \dontrun{
+#' # Create the default custom.scss
+#' write_scss()
 #'
-#' # Write the SCSS file
-#' write_scss(path = tmp_dir)
+#' # Create a second SCSS file
+#' write_scss("custom2")
+#' # These are equivalent
+#' write_scss("www/custom2.scss")
+#' }
 #'
-#' # Confirm the file was created
-#' file.exists(file.path(tmp_dir, "custom.scss"))
-#'
-#' # Clean up
-#' unlink(file.path(tmp_dir, "custom.scss"))
-#'
-#' @seealso \code{\link{quarto_project}}, \code{\link{write_quarto}}
+#' @seealso \code{\link{init}}, \code{\link{write_quarto}}
 #' @export
-write_scss <- function(path = here::here()) {
-  the_scss_file <- create_scss(path)
-  if (interactive()) {
-    usethis::edit_file(the_scss_file)
-  }
-  invisible(the_scss_file)
-}
+write_scss <- function(filename = "custom", path = here::here()) {
 
-#' Create a Quarto SCSS File (internal worker)
-#'
-#' Internal helper that creates \code{custom.scss} file from template.
-#'
-#' @param path Character. Path to the project directory.
-#'
-#' @return Path to the created file.
-#' @noRd
-create_scss <- function(path) {
-  # Validate and normalize path
   path <- .validate_and_normalize_path(path)
 
-  # Set up full destination file path
-  the_scss_file <- file.path(path, 'custom.scss')
+  # Normalize filename: strip www/ prefix and .scss extension if provided
+  filename <- sub("^www/", "", filename)
+  filename <- sub("\\.scss$", "", filename)
 
-  # Handle custom.scss creation
-  if (file.exists(the_scss_file)) {
+  if (!is.character(filename) || !grepl("^[a-zA-Z0-9_-]+$", filename)) {
     rlang::abort(
-      'A SCSS file already exists in the specified path.',
-      class = 'froggeR_file_exists'
+      "Invalid filename. Use only letters, numbers, hyphens, and underscores."
     )
   }
 
-  # Get scss template path
-  template_path <- system.file('gists/custom.scss', package = 'froggeR')
-  if (template_path == '') {
-    rlang::abort(
-      'Could not find SCSS template in package installation.',
-      class = 'froggeR_template_not_found'
-    )
-  }
+  complete_filename <- sprintf("www/%s.scss", filename)
 
-  file.copy(from = template_path, to = the_scss_file, overwrite = FALSE)
-  ui_done('Created custom.scss')
+  dest <- .open_or_create(
+    dest_file = file.path(path, complete_filename),
+    template_repo_path = "www/custom.scss",
+    label = complete_filename
+  )
 
-  return(normalizePath(the_scss_file, mustWork = TRUE))
+  dest <- normalizePath(dest, mustWork = TRUE)
+
+  if (interactive()) usethis::edit_file(dest)
+
+  invisible(dest)
 }
